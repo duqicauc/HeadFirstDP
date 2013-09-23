@@ -17,7 +17,7 @@ public class InputTest {
 		try {
 			InputStream inputStream = new LowCaseInputStream(
 					new BufferedInputStream(new FileInputStream("test.txt")));
-/*ÕâÖÖĞ´·¨£¬»áµ¼ÖÂ×îºó¶à¶ÁÒ»´Î*/			
+			/* ä½¿ç”¨è¿™ç§æ–¹æ³•ï¼Œä¼šå¤šè¯»ä¸€æ¬¡ */			
 //			do {
 //				c = inputStream.read();
 //				System.out.print((char)c);
