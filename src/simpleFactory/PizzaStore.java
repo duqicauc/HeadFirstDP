@@ -1,6 +1,6 @@
 package simpleFactory;
 
-public class PizzStore {
+public class PizzaStore {
 
 	public Pizza orderPizza(String type) {
 		Pizza pizza = null;
@@ -27,6 +27,6 @@ public class PizzStore {
 	}
 	
 	//other methods here
-	//属于Pizza店的其他方法也在这个类中，注意接口的抽象层次要一致
+	//灞炰簬Pizza搴楃殑鍏朵粬鏂规硶涔熷湪杩欎釜绫讳腑锛屾敞鎰忔帴鍙ｇ殑鎶借薄灞傛瑕佷竴鑷�
 
 }
