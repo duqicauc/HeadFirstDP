@@ -29,6 +29,7 @@ public class StarbuzzCoffee {
 				+ df.format(beverage3.cost()));
 		
 		Beverage beverage4 = new DarkRoast();
+		beverage4.setSize(Beverage.VENTI);
 		beverage4 = new Whip(beverage4);
 		beverage4.setSize(Beverage.VENTI);
 		System.out.println(beverage4.getDescription() + ":"

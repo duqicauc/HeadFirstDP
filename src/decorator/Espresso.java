@@ -8,7 +8,16 @@ public class Espresso extends Beverage {
 	
 	@Override
 	public float cost() {
-		return Menu.ESPRESSO_PRICE;
+		float cost = 0.0f;
+		int espressoSize = getSize();
+		if (espressoSize == Beverage.TALL) {
+			cost = Menu.ESPRESSO_PRICE_TALL;
+		} else if (espressoSize == Beverage.GRANDE) {
+			cost = Menu.ESPRESSO_PRICE_GRANDE;
+		} else if (espressoSize == Beverage.VENTI){
+			cost = Menu.ESPRESSO_PRICE_VENTI;
+		}
+		return cost;
 	}
 
 }

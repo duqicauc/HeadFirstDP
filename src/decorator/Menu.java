@@ -6,10 +6,18 @@ public class Menu {
 	static final String DARKROAST_NAME = "Dark Roast";
 	static final String DECAF_NAME = "Decaf";
 	static final String ESPRESSO_NAME = "Espresso";
-	static final float HOUSEBLEND_PRICE = 0.89f;
-	static final float DARKROAST_PRICE = 0.99f;
-	static final float DECAF_PRICE = 1.05f;
-	static final float ESPRESSO_PRICE = 1.99f;
+	static final float HOUSEBLEND_PRICE_TALL = 0.79f;
+	static final float HOUSEBLEND_PRICE_GRANDE = 0.89f;
+	static final float HOUSEBLEND_PRICE_VENTI = 0.99f;
+	static final float DARKROAST_PRICE_TALL = 0.89f;
+	static final float DARKROAST_PRICE_GRANDE = 0.99f;
+	static final float DARKROAST_PRICE_VENTI = 1.09f;
+	static final float DECAF_PRICE_TALL = 0.95f;
+	static final float DECAF_PRICE_GRANDE = 1.05f;
+	static final float DECAF_PRICE_VENTI = 1.15f;
+	static final float ESPRESSO_PRICE_TALL = 1.89f;
+	static final float ESPRESSO_PRICE_GRANDE = 1.99f;
+	static final float ESPRESSO_PRICE_VENTI = 2.09f;
 	/* Condiments */
 	static final String MILK_NAME = "Steamed Milk";
 	static final String MOCHA_NAME = "Mocha";
