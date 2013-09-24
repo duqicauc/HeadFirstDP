@@ -27,7 +27,20 @@ public class StarbuzzCoffee {
 		beverage3.setSize(Beverage.TALL);
 		System.out.println(beverage3.getDescription() + ":"
 				+ df.format(beverage3.cost()));
-
+		
+		Beverage beverage4 = new DarkRoast();
+		beverage4 = new Whip(beverage4);
+		beverage4.setSize(Beverage.VENTI);
+		System.out.println(beverage4.getDescription() + ":"
+				+ df.format(beverage4.cost()));
+		
+		Beverage beverage5 = new Espresso();
+		beverage5 = new Milk(beverage5);
+		beverage5.setSize(Beverage.TALL);
+		beverage5 = new Mocha(beverage5);
+		beverage5.setSize(Beverage.VENTI);
+		System.out.println(beverage5.getDescription() + ":"
+				+ df.format(beverage5.cost()));
 	}
 
 }

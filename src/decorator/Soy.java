@@ -1,5 +1,6 @@
 package decorator;
 
+
 public class Soy extends CondimentDecorator {
 	private Beverage beverage;
 
@@ -25,11 +26,11 @@ public class Soy extends CondimentDecorator {
 		float cost = beverage.cost();
 		int s = this.getSize();
 		if (s == Beverage.TALL) {
-			cost += 0.10f;
+			cost += Menu.SOY_PRICE_TALL;
 		} else if (s == Beverage.GRANDE) {
-			cost += 0.15f;
+			cost += Menu.SOY_PRICE_GRANDE;
 		} else if (s == Beverage.VENTI) {
-			cost += 0.20f;
+			cost += Menu.SOY_PRICE_VENTI;
 		}
 		return cost;
 	}

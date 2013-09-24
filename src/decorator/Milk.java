@@ -14,7 +14,16 @@ public class Milk extends CondimentDecorator {
 
 	@Override
 	public float cost() {
-		return beverage.cost() + Menu.MILK_PRICE;
+		float cost = beverage.cost();
+		int milkSize = getSize();
+		if (milkSize == Beverage.TALL) {
+			cost += Menu.MILK_PRICE_TALL;
+		}else if (milkSize == Beverage.GRANDE) {
+			cost += Menu.MILK_PRICE_GRANDE;
+		}else if (milkSize == Beverage.VENTI) {
+			cost += Menu.MILK_PRICE_VENTI;
+		}
+		return cost;
 	}
 
 }

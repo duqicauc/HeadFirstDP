@@ -15,8 +15,16 @@ public class Menu {
 	static final String MOCHA_NAME = "Mocha";
 	static final String SOY_NAME = "Soy";
 	static final String WHIP_NAME = "Whip";
-	static final float MILK_PRICE = 0.10f;
-	static final float MOCHA_PRICE = 0.20f;
-	static final float SOY_PRICE = 0.15f;
-	static final float WHIP_PRICE = 0.10f;
+	static final float MILK_PRICE_TALL = 0.05f;
+	static final float MILK_PRICE_GRANDE = 0.10f;
+	static final float MILK_PRICE_VENTI = 0.15f;
+	static final float MOCHA_PRICE_TALL = 0.15f;
+	static final float MOCHA_PRICE_GRANDE = 0.20f;
+	static final float MOCAH_PRICE_VENTI = 0.25f;
+	static final float SOY_PRICE_TALL = 0.10f;
+	static final float SOY_PRICE_GRANDE = 0.15f;
+	static final float SOY_PRICE_VENTI = 0.20f;
+	static final float WHIP_PRICE_TALL = 0.05f;
+	static final float WHIP_PRICE_GRANDE = 0.10f;
+	static final float WHIP_PRICE_VENTI = 0.15f;
 }

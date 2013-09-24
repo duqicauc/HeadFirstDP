@@ -14,7 +14,16 @@ public class Mocha extends CondimentDecorator {
 
 	@Override
 	public float cost() {
-		return beverage.cost() + Menu.MOCHA_PRICE;
+		float cost = beverage.cost();
+		int mochaSize = getSize();
+		if (mochaSize == Beverage.TALL) {
+			cost += Menu.MOCHA_PRICE_TALL;
+		} else if (mochaSize == Beverage.GRANDE) {
+			cost += Menu.MOCHA_PRICE_GRANDE;
+		} else if (mochaSize == Beverage.VENTI) {
+			cost += Menu.MOCAH_PRICE_VENTI;
+		}
+		return cost;
 	}
 
 }
