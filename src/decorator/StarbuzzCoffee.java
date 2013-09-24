@@ -16,15 +16,15 @@ public class StarbuzzCoffee {
 		houseBlendWithMilk = new Milk(houseBlendWithMilk);
 		houseBlendWithMilk = new Mocha(houseBlendWithMilk);
 		houseBlendWithMilk = new Milk(houseBlendWithMilk);
-		DecimalFormat df = new DecimalFormat(".##");// 用作浮点数格式化输出
+		DecimalFormat df = new DecimalFormat(".##");
 		System.out.println(houseBlendWithMilk.getDescription() + ":"
 				+ df.format(houseBlendWithMilk.cost()));
 
-		/* 测试按照调料的大小区分价格 */
+		/* 娴嬭瘯鎸夌収澶у皬璁＄畻浠锋牸 */
 
 		Beverage beverage3 = new Decaf();
 		beverage3 = new Soy(beverage3);
-		beverage3.setSize(Beverage.VENTI);
+		beverage3.setSize(Beverage.TALL);
 		System.out.println(beverage3.getDescription() + ":"
 				+ df.format(beverage3.cost()));
 
