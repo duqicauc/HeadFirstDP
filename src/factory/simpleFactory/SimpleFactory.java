@@ -1,4 +1,4 @@
-package simpleFactory;
+package factory.simpleFactory;
 
 /**
  * 原则：将经常发生变化的备份分离出来，并封装之

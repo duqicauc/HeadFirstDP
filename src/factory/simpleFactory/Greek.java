@@ -1,4 +1,4 @@
-package simpleFactory;
+package factory.simpleFactory;
 
 public class Greek extends Pizza {
 

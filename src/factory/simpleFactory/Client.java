@@ -1,4 +1,4 @@
-package simpleFactory;
+package factory.simpleFactory;
 
 public class Client {
 
@@ -7,7 +7,7 @@ public class Client {
 	 */
 	public static void main(String[] args) {
 		PizzaStore pizzaStore = new PizzaStore();
-		Pizza pizza = pizzaStore.orderPizza("cheese");
+		Pizza pizza = pizzaStore.orderPizza("veggie");
 
 	}
 
