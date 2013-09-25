@@ -27,6 +27,6 @@ public class PizzaStore {
 	}
 	
 	//other methods here
-	//灞炰簬Pizza搴楃殑鍏朵粬鏂规硶涔熷湪杩欎釜绫讳腑锛屾敞鎰忔帴鍙ｇ殑鎶借薄灞傛瑕佷竴鑷�
+	//披萨店的其他接口函数，注意接口的抽象层次要一致
 
 }
