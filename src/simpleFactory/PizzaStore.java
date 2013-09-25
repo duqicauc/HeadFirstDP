@@ -1,22 +1,15 @@
 package simpleFactory;
 
 public class PizzaStore {
-
+	private SimpleFactory pizzaFactory = new SimpleFactory();
+	
+	/**
+	 * 根据客户要求的类型定制不同种类的披萨
+	 * */
 	public Pizza orderPizza(String type) {
-		Pizza pizza = null;
-
-		if (type.equals("cheese")) {
-			pizza = new CheesePizza();
-		} else if (type.equals("greek")) {
-			pizza = new Greek();
-		} else if (type.equals("peperoni")) {
-			pizza = new PepperoniPizza();
-		} else if (type.equals("clam")) {
-			pizza = new ClamPizza();
-		} else if (type.equals("veggie")) {
-			pizza = new VeggiePizza();
-		}
-		
+		// 由SimpleFactory制作各种类型的披萨
+		Pizza pizza = pizzaFactory.createPizza(type);
+		// 披萨出货前的几项工作
 		pizza.prepare();
 		pizza.bake();
 		pizza.cut();
