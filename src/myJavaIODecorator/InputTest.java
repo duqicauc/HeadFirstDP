@@ -13,13 +13,8 @@ public class InputTest {
 		try {
 			InputStream inputStream = new LowCaseInputStream(
 					new BufferedInputStream(new FileInputStream("test.txt")));
-			/* 使用这种方法，会多读一次 */			
-//			do {
-//				c = inputStream.read();
-//				System.out.print((char)c);
-//				
-//			} while (c >= 0);
 			
+			/* 依次将文件内容读入并处理，然后打印到控制台 */
 			while ((c = inputStream.read()) >= 0) {
 				System.out.print((char)c);
 			}
