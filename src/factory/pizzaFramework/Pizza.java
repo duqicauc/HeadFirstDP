@@ -3,6 +3,11 @@ package factory.pizzaFramework;
 import java.util.ArrayList;
 
 public abstract class Pizza {
+	public static String CHEESE = "cheese";
+	public static String CLAM = "clam";
+	public static String GREEK = "greek";
+	public static String VEGGIE = "veggie";
+	
 	protected String name;	//披萨名字
 	protected String dough;	//面团
 	protected String sauce;	//酱油
