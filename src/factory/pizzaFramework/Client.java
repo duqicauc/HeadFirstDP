@@ -7,7 +7,7 @@ public class Client {
 	 */
 	public static void main(String[] args) {
 		PizzaStore nyPizzaStore = new NYStylePizzaStore();
-		Pizza pizza = nyPizzaStore.createPizza("cheese");
+		Pizza pizza = nyPizzaStore.orderPizza("cheese");
 		System.out.println("Ethan ordered a " + pizza.getName() + "\n");
 		
 	}
