@@ -2,7 +2,7 @@ package factory.pizzaFramework;
 
 public abstract class PizzaStore {
 	
-	public abstract Pizza createPizza(String type);
+	protected abstract Pizza createPizza(String type);
 	
 	/**
 	 * 根据客户要求的类型定制不同种类的披萨
