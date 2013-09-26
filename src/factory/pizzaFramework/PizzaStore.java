@@ -1,7 +1,8 @@
 package factory.pizzaFramework;
 
 public abstract class PizzaStore {
-	
+	//定义为public不合适，因为不希望直接调用它
+	//定义为private则不能在子类中覆盖重写
 	protected abstract Pizza createPizza(String type);
 	
 	/**
