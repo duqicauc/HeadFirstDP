@@ -13,6 +13,7 @@ public class ChocolateBoiler {
 	}
 	
 	// 定义一个公开的类接口（static），检查该类是否已经实例化并返回该引用值
+	// 如果创建实例的代码开销不严重，那就直接用这个关键字即可，但是如果创建实例的代码位于经常执行的代码片段，则要注意它可能会影响到你的程序效率哦
 	public static synchronized ChocolateBoiler getInstance(){
 		if (uniqueChocolateBoiler == null) {
 			uniqueChocolateBoiler = new ChocolateBoiler();
