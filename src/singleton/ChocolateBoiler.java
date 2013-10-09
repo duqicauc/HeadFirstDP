@@ -5,7 +5,7 @@ public class ChocolateBoiler {
 	private boolean empty;
 	private boolean boiled;
 	
-	private static ChocolateBoiler uniqueChocolateBoiler;			//记录该类的唯一实例的引用
+	private volatile static ChocolateBoiler uniqueChocolateBoiler;			//记录该类的唯一实例的引用
 	
 	// 将构造函数定义为private
 	private ChocolateBoiler(){
