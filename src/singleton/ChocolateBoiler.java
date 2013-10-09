@@ -13,7 +13,7 @@ public class ChocolateBoiler {
 	}
 	
 	// 定义一个公开的类接口（static），检查该类是否已经实例化并返回该引用值
-	public static ChocolateBoiler getInstance(){
+	public static synchronized ChocolateBoiler getInstance(){
 		if (uniqueChocolateBoiler == null) {
 			uniqueChocolateBoiler = new ChocolateBoiler();
 		}
