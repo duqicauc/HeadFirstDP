@@ -1,10 +1,12 @@
 package singleton;
 
+
 public class ChocolateBoiler {
 	private boolean empty;
 	private boolean boiled;
 	
-	private static ChocolateBoiler uniqueChocolateBoiler;			//记录该类的唯一实例的引用
+	// 依赖JVM对static变量的适用规则，确保任何线程想访问该静态变量之前，一定要先创建该实例
+	private static ChocolateBoiler uniqueChocolateBoiler = new ChocolateBoiler();			//记录该类的唯一实例的引用
 	
 	// 将构造函数定义为private
 	private ChocolateBoiler(){
@@ -12,12 +14,8 @@ public class ChocolateBoiler {
 		boiled = false;
 	}
 	
-	// 定义一个公开的类接口（static），检查该类是否已经实例化并返回该引用值
-	// 如果创建实例的代码开销不严重，那就直接用这个关键字即可，但是如果创建实例的代码位于经常执行的代码片段，则要注意它可能会影响到你的程序效率哦
+	// 定义一个公开的类接口（static），返回该引用值
 	public static synchronized ChocolateBoiler getInstance(){
-		if (uniqueChocolateBoiler == null) {
-			uniqueChocolateBoiler = new ChocolateBoiler();
-		}
 		return uniqueChocolateBoiler;
 	}
 	
