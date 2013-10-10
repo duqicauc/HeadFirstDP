@@ -15,7 +15,8 @@ public class RemoteControlTest {
 		LightOnCommand lightOn = new LightOnCommand(light);
 		LightOffCommand lightOff = new LightOffCommand(light);
 		//GarageDoorOpenCommand garageDoorOpen = new GarageDoorOpenCommand(garageDoor);
-		GarageDoorCloseCommand garageDoorClose = new GarageDoorCloseCommand(garageDoor);
+		//GarageDoorCloseCommand garageDoorClose = new GarageDoorCloseCommand(garageDoor);
+		GarageDoorStopCommand garageDoorStop = new GarageDoorStopCommand(garageDoor);
 		
 		// 2、setCommand:客户将名利交给Invoker
 		remote.setCommand(lightOn);
@@ -26,7 +27,8 @@ public class RemoteControlTest {
 		remote.buttonWasPressed();
 		
 		//remote.setCommand(garageDoorOpen);
-		remote.setCommand(garageDoorClose);
+		//remote.setCommand(garageDoorClose);
+		remote.setCommand(garageDoorStop);
 		remote.buttonWasPressed();
 
 	}
