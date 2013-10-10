@@ -1,5 +1,8 @@
 package command;
 
+//
+// This is Invoker
+//
 public class SimpleRemoteControl {
 	Command slot;
 	
