@@ -1,4 +1,4 @@
-package command;
+package command.simpleremote;
 
 public class Light {
 	public void on(){

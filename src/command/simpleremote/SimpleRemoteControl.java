@@ -1,4 +1,4 @@
-package command;
+package command.simpleremote;
 
 //
 // This is Invoker
