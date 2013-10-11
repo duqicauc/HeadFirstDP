@@ -14,4 +14,10 @@ public class StereoOnWithCDCommand implements Command {
 		stereo.setVolume(11);//为什么这里11比10好？
 	}
 
+	@Override
+	public void undo() {
+		stereo.off();
+		
+	}
+
 }

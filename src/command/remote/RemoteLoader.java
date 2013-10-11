@@ -30,10 +30,13 @@ public class RemoteLoader {
 		System.out.println(remote);
 		remote.onButtonWasPushed(0);
 		remote.offButtonWasPushed(0);
+		remote.undoButtonWasPushed();
 		remote.onButtonWasPushed(1);
 		remote.offButtonWasPushed(1);
+		remote.undoButtonWasPushed();
 		remote.onButtonWasPushed(2);
-		remote.offButtonWasPushed(2);
+		//remote.offButtonWasPushed(2);
+		remote.undoButtonWasPushed();
 		remote.onButtonWasPushed(3);
 		remote.offButtonWasPushed(3);
 
