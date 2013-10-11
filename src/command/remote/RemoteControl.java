@@ -50,6 +50,7 @@ public class RemoteControl {
 					+ onCommands[i].getClass().getName() + "\t"
 					+ offCommands[i].getClass().getName()+ "\n");
 		}
+		stringBuffer.append("[ undo ] " + undoCommand.getClass().getName() + "\n");
 		return stringBuffer.toString();
 	}
 

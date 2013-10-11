@@ -28,18 +28,23 @@ public class RemoteLoader {
 		remote.setCommand(3, stereoOnWithCD, stereoOff);
 		// 利用toString函数将插槽和在这个插槽上对应的命令对象打印出来
 		System.out.println(remote);
+		remote.undoButtonWasPushed();
+		
 		remote.onButtonWasPushed(0);
 		remote.offButtonWasPushed(0);
+		System.out.println(remote);
 		remote.undoButtonWasPushed();
-		remote.onButtonWasPushed(1);
-		remote.offButtonWasPushed(1);
-		remote.undoButtonWasPushed();
-		remote.onButtonWasPushed(2);
+		//remote.onButtonWasPushed(1);
+		//remote.offButtonWasPushed(1);
+		//remote.onButtonWasPushed(2);
 		//remote.offButtonWasPushed(2);
+		//remote.undoButtonWasPushed();
+		//remote.onButtonWasPushed(3);
+		//remote.offButtonWasPushed(3);
+		remote.offButtonWasPushed(0);
+		remote.onButtonWasPushed(0);
+		System.out.println(remote);
 		remote.undoButtonWasPushed();
-		remote.onButtonWasPushed(3);
-		remote.offButtonWasPushed(3);
-
 	}
 
 }
