@@ -15,6 +15,9 @@ public class RemoteLoader {
 		
 		remote.setCommand(0,livingRoomLightOn, livingRoomLightOff);
 		
+		// 利用toString函数将插槽和在这个插槽上对应的命令对象打印出来
+		System.out.println(remote);
+		
 		remote.onButtonWasPushed(0);
 		remote.offButtonWasPushed(0);
 

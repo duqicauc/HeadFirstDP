@@ -40,7 +40,7 @@ public class RemoteControl {
 		for (int i = 0; i < 7; i++) {
 			stringBuffer.append("[ slot " + i + "] "
 					+ onCommands[i].getClass().getName() + "\t"
-					+ offCommands[i].getClass().getName());
+					+ offCommands[i].getClass().getName()+ "\n");
 		}
 		return stringBuffer.toString();
 	}
