@@ -17,6 +17,7 @@ public class CeilingFanHighCommand implements Command {
 
 	@Override
 	public void undo() {
+		// 分支超过3个，选择switch
 		switch (prevSpeed) {
 		case CeilingFan.HIGH:
 			ceilingFan.high();
@@ -30,7 +31,7 @@ public class CeilingFanHighCommand implements Command {
 		case CeilingFan.OFF:
 			ceilingFan.off();
 			break;
-
+			
 		default:
 			break;
 		}
