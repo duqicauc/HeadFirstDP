@@ -3,6 +3,10 @@ package command.remote;
 public class CeilingFanOnCommand implements Command {
 	private CeilingFan ceilingFan;
 	private int prevSpeed;
+	
+	public CeilingFanOnCommand(CeilingFan ceilingFan) {
+		this.ceilingFan = ceilingFan;
+	}
 
 	@Override
 	public void execute() {

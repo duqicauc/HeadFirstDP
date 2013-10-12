@@ -21,21 +21,25 @@ public class CeilingFan {
 	public void high(){
 		speed = HIGH;
 		// code to set fan to high
+		System.out.println("Now the " + location + "'s Fan is high speed");
 	}
 	
 	public void medium(){
 		speed = MEDIUM;
 		// code to set fan to medium
+		System.out.println("Now the " + location + "'s Fan is medium speed");
 	}
 	
 	public void low() {
 		speed = LOW;
 		// code to set fan to low
+		System.out.println("Now the " + location + "'s Fan is low speed");
 	}
 	
 	public void off(){
 		speed = OFF;
 		// code to turn fan off
+		System.out.println("Now the " + location + "'s Fan is off speed");
 	}
 	
 	/**

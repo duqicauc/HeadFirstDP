@@ -45,6 +45,31 @@ public class RemoteLoader {
 		remote.onButtonWasPushed(0);
 		System.out.println(remote);
 		remote.undoButtonWasPushed();
+		
+		
+		/*测试CeilingFan相关undo功能*/
+		CeilingFan livingRoomCeilingFan = new CeilingFan("Living Room");
+		
+		CeilingFanOnCommand ceilingFanOnCommand = new CeilingFanOnCommand(livingRoomCeilingFan);
+		CeilingFanHighCommand ceilingFanHighCommand = new CeilingFanHighCommand(livingRoomCeilingFan);
+		CeilingFanMediumCommand ceilingFanMediumCommand = new CeilingFanMediumCommand(livingRoomCeilingFan);
+		CeilingFanLowCommand ceilingFanLowCommand = new CeilingFanLowCommand(livingRoomCeilingFan);
+		CeilingFanOffCommand ceilingFanOffCommand = new CeilingFanOffCommand(livingRoomCeilingFan);
+		
+		remote.setCommand(0, ceilingFanOnCommand, ceilingFanOffCommand);
+		remote.setCommand(1, ceilingFanLowCommand, ceilingFanOffCommand);
+		remote.setCommand(2, ceilingFanMediumCommand, ceilingFanOffCommand);
+		remote.setCommand(3, ceilingFanHighCommand, ceilingFanOffCommand);
+		
+		remote.onButtonWasPushed(0);
+		remote.offButtonWasPushed(0);
+		System.out.println(remote);
+		remote.undoButtonWasPushed();//执行undo之后应该返回为low speed
+		
+		remote.onButtonWasPushed(3);
+		remote.onButtonWasPushed(2);
+		System.out.println(remote);
+		remote.undoButtonWasPushed();//执行之后应该返回到remote.onButtonWasPushed(3)这句，即high speed
 	}
 
 }
