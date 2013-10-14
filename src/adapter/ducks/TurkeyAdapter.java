@@ -1,7 +1,7 @@
 package adapter.ducks;
 
 public class TurkeyAdapter implements Duck {
-	Turkey turkey;
+	private Turkey turkey;
 	
 	public TurkeyAdapter(Turkey turkey) {
 		this.turkey = turkey;
