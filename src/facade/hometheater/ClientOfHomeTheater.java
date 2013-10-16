@@ -20,6 +20,8 @@ public class ClientOfHomeTheater {
 						projector, lights, screen, popper);
  
 		homeTheater.watchMovie("Raiders of the Lost Ark");
+		
+		homeTheater.endMovie();
 
 	}
 

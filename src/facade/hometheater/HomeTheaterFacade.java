@@ -38,6 +38,10 @@ public class HomeTheaterFacade {
 		this.popper = popper;
 	}
 	
+	/**
+	 * 观看电影，一键完成
+	 * @param movie
+	 * */
 	public void watchMovie(String movie){
 		System.out.println("Get ready to watch a movie...");
 		popper.on();
@@ -54,5 +58,15 @@ public class HomeTheaterFacade {
 		dvdPlayer.play(movie);
 	}
 	
-	
+	public void endMovie(){
+		System.out.println("Get ready to end a movie");
+		popper.off();
+		lights.on();//不看电影后，把灯光恢复，即点亮
+		screen.up();
+		projector.off();
+		amplifier.off();
+		dvdPlayer.stop();
+		dvdPlayer.eject();
+		dvdPlayer.off();
+	}
 }
