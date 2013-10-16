@@ -1,17 +1,17 @@
 package template.simplebarista;
 
-public class Tea {
+public class Tea extends CaffeineBeverage {
  
-	void prepareRecipe() {
+	public void prepareRecipe() {
 		boilWater();
 		steepTeaBag();
 		pourInCup();
 		addLemon();
 	}
  
-	public void boilWater() {
-		System.out.println("Boiling water");
-	}
+//	public void boilWater() {
+//		System.out.println("Boiling water");
+//	}
  
 	public void steepTeaBag() {
 		System.out.println("Steeping the tea");
@@ -21,7 +21,7 @@ public class Tea {
 		System.out.println("Adding Lemon");
 	}
  
-	public void pourInCup() {
-		System.out.println("Pouring into cup");
-	}
+//	public void pourInCup() {
+//		System.out.println("Pouring into cup");
+//	}
 }
