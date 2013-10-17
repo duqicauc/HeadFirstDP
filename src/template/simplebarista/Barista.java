@@ -6,11 +6,12 @@ public class Barista {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println("Making coffee...");
-		Coffe coffe = new Coffe();
+		System.out.println("\nMaking coffee...");
+		CoffeWithHook coffe = new CoffeWithHook();
 		coffe.prepareRecipe();
-		System.out.println("Making tea...");
-		Tea tea = new Tea();
+		
+		System.out.println("\nMaking tea...");
+		TeaWithHook tea = new TeaWithHook();
 		tea.prepareRecipe();
 
 	}

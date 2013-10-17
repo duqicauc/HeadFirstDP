@@ -29,7 +29,7 @@ public class TeaWithHook extends CaffeineBeverageWithHook {
 //		System.out.println("Pouring into cup");
 //	}
 	
-	public boolean customerWantsCondiments() {
+	public boolean customersWantCondiments() {
 
 		String answer = getUserInput();
 
