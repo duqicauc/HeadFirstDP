@@ -1,6 +1,6 @@
 package template.simplebarista;
 
-public abstract class CaffeineBeverage {
+public abstract class CaffeineBeverageWithHook {
 	public final void prepareRecipe(){
 		boilWater();
 		brew();//由子类负责具体实现
