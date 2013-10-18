@@ -22,14 +22,20 @@ public class Waitress {
 	 * prints every item on menu
 	 * */
 	public void printMenu(){
-		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
-		for (int i = 0; i < breakfastItems.size(); i++) {
-			MenuItem menuItem = (MenuItem)breakfastItems.get(i);
+//		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
+//		for (int i = 0; i < breakfastItems.size(); i++) {
+//			MenuItem menuItem = (MenuItem)breakfastItems.get(i);
+//			System.out.print(menuItem.getName() + " ");
+//			System.out.println(menuItem.getPrice() + " ");
+//			System.out.println(menuItem.getDescription());
+//		}
+		Iterator breakfastIterator = pancakeHouseMenu.createIterator();
+		while (breakfastIterator.hasNext()) {
+			MenuItem menuItem = (MenuItem)breakfastIterator.next();
 			System.out.print(menuItem.getName() + " ");
 			System.out.println(menuItem.getPrice() + " ");
 			System.out.println(menuItem.getDescription());
 		}
-		
 //		MenuItem[] lunchItems = dinnerMenu.getMenuItems();
 //		for (int i = 0; i < lunchItems.length; i++) {
 //			MenuItem menuItem = lunchItems[i];
@@ -50,9 +56,16 @@ public class Waitress {
 	 * */
 	public void printBreakfastMenu(){
 		//PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
-		for (int i = 0; i < breakfastItems.size(); i++) {
-			MenuItem menuItem = (MenuItem)breakfastItems.get(i);
+//		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
+//		for (int i = 0; i < breakfastItems.size(); i++) {
+//			MenuItem menuItem = (MenuItem)breakfastItems.get(i);
+//			System.out.print(menuItem.getName() + " ");
+//			System.out.println(menuItem.getPrice() + " ");
+//			System.out.println(menuItem.getDescription());
+//		}
+		Iterator breakfastIterator = pancakeHouseMenu.createIterator();
+		while (breakfastIterator.hasNext()) {
+			MenuItem menuItem = (MenuItem)breakfastIterator.next();
 			System.out.print(menuItem.getName() + " ");
 			System.out.println(menuItem.getPrice() + " ");
 			System.out.println(menuItem.getDescription());
@@ -83,15 +96,25 @@ public class Waitress {
 	 * */
 	public void printVegetarianMenu(){
 		//PancakeHouseMenu pancakeHouseMenu =  new PancakeHouseMenu();
-		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
-		for (int i = 0; i < breakfastItems.size(); i++) {
-			MenuItem menuItem = (MenuItem)breakfastItems.get(i);
+//		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
+//		for (int i = 0; i < breakfastItems.size(); i++) {
+//			MenuItem menuItem = (MenuItem)breakfastItems.get(i);
+//			if (isItemVegetarian(menuItem)) {
+//				System.out.print(menuItem.getName() + " ");
+//				System.out.println(menuItem.getPrice() + " ");
+//				System.out.println(menuItem.getDescription());
+//			}
+//		}
+		Iterator breakfastIterator = pancakeHouseMenu.createIterator();
+		while (breakfastIterator.hasNext()) {
+			MenuItem menuItem = (MenuItem)breakfastIterator.next();
 			if (isItemVegetarian(menuItem)) {
 				System.out.print(menuItem.getName() + " ");
 				System.out.println(menuItem.getPrice() + " ");
 				System.out.println(menuItem.getDescription());
 			}
 		}
+		
 		Iterator dinnerIterator = dinnerMenu.createIterator();
 		while (dinnerIterator.hasNext()) {
 			MenuItem menuItem = (MenuItem) dinnerIterator.next();
