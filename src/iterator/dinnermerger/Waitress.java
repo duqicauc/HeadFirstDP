@@ -22,23 +22,9 @@ public class Waitress {
 	 * prints every item on menu
 	 * */
 	public void printMenu(){
-//		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
-//		for (int i = 0; i < breakfastItems.size(); i++) {
-//			MenuItem menuItem = (MenuItem)breakfastItems.get(i);
-//			System.out.print(menuItem.getName() + " ");
-//			System.out.println(menuItem.getPrice() + " ");
-//			System.out.println(menuItem.getDescription());
-//		}
 		Iterator breakfastIterator = pancakeHouseMenu.createIterator();
 		System.out.println("打印出breakfast菜单。。。。");
 		printMenu(breakfastIterator);
-//		MenuItem[] lunchItems = dinnerMenu.getMenuItems();
-//		for (int i = 0; i < lunchItems.length; i++) {
-//			MenuItem menuItem = lunchItems[i];
-//			System.out.print(menuItem.getName() + " ");
-//			System.out.println(menuItem.getPrice() + " ");
-//			System.out.println(menuItem.getDescription());
-//		}
 		Iterator dinnerIterator = dinnerMenu.createIterator();
 		System.out.println("打印出lunch菜单。。。。");
 		printMenu(dinnerIterator);
@@ -47,14 +33,6 @@ public class Waitress {
 	 * prints just breakfast items
 	 * */
 	public void printBreakfastMenu(){
-		//PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-//		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
-//		for (int i = 0; i < breakfastItems.size(); i++) {
-//			MenuItem menuItem = (MenuItem)breakfastItems.get(i);
-//			System.out.print(menuItem.getName() + " ");
-//			System.out.println(menuItem.getPrice() + " ");
-//			System.out.println(menuItem.getDescription());
-//		}
 		Iterator breakfastIterator = pancakeHouseMenu.createIterator();
 		System.out.println("打印出breakfast菜单。。。。");
 		printMenu(breakfastIterator);
@@ -63,13 +41,6 @@ public class Waitress {
 	 * prints just lunch items
 	 * */
 	public void printLunchMenu(){
-//		MenuItem[] lunchItems = dinnerMenu.getMenuItems();
-//		for (int i = 0; i < lunchItems.length; i++) {
-//			MenuItem menuItem = lunchItems[i];
-//			System.out.print(menuItem.getName() + " ");
-//			System.out.println(menuItem.getPrice() + " ");
-//			System.out.println(menuItem.getDescription());
-//		}
 		Iterator dinnerIterator = dinnerMenu.createIterator();
 		System.out.println("打印出lunch菜单。。。。");
 		printMenu(dinnerIterator);
@@ -79,16 +50,6 @@ public class Waitress {
 	 * prints all vegetarian menu items
 	 * */
 	public void printVegetarianMenu(){
-		//PancakeHouseMenu pancakeHouseMenu =  new PancakeHouseMenu();
-//		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
-//		for (int i = 0; i < breakfastItems.size(); i++) {
-//			MenuItem menuItem = (MenuItem)breakfastItems.get(i);
-//			if (isItemVegetarian(menuItem)) {
-//				System.out.print(menuItem.getName() + " ");
-//				System.out.println(menuItem.getPrice() + " ");
-//				System.out.println(menuItem.getDescription());
-//			}
-//		}
 		printVegetrian(pancakeHouseMenu.createIterator());
 		printVegetrian(dinnerMenu.createIterator());
 	}
