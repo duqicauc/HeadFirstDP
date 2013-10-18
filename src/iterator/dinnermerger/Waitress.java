@@ -22,7 +22,6 @@ public class Waitress {
 	 * prints every item on menu
 	 * */
 	public void printMenu(){
-		PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
 		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
 		for (int i = 0; i < breakfastItems.size(); i++) {
 			MenuItem menuItem = (MenuItem)breakfastItems.get(i);
@@ -31,10 +30,16 @@ public class Waitress {
 			System.out.println(menuItem.getDescription());
 		}
 		
-		DinnerMenu dinnerMenu = new DinnerMenu();
-		MenuItem[] lunchItems = dinnerMenu.getMenuItems();
-		for (int i = 0; i < lunchItems.length; i++) {
-			MenuItem menuItem = lunchItems[i];
+//		MenuItem[] lunchItems = dinnerMenu.getMenuItems();
+//		for (int i = 0; i < lunchItems.length; i++) {
+//			MenuItem menuItem = lunchItems[i];
+//			System.out.print(menuItem.getName() + " ");
+//			System.out.println(menuItem.getPrice() + " ");
+//			System.out.println(menuItem.getDescription());
+//		}
+		Iterator dinnerIterator = dinnerMenu.createIterator();
+		while (dinnerIterator.hasNext()) {
+			MenuItem menuItem = (MenuItem)dinnerIterator.next();
 			System.out.print(menuItem.getName() + " ");
 			System.out.println(menuItem.getPrice() + " ");
 			System.out.println(menuItem.getDescription());
@@ -57,10 +62,16 @@ public class Waitress {
 	 * prints just lunch items
 	 * */
 	public void printLunchMenu(){
-		DinnerMenu dinnerMenu = new DinnerMenu();
-		MenuItem[] lunchItems = dinnerMenu.getMenuItems();
-		for (int i = 0; i < lunchItems.length; i++) {
-			MenuItem menuItem = lunchItems[i];
+//		MenuItem[] lunchItems = dinnerMenu.getMenuItems();
+//		for (int i = 0; i < lunchItems.length; i++) {
+//			MenuItem menuItem = lunchItems[i];
+//			System.out.print(menuItem.getName() + " ");
+//			System.out.println(menuItem.getPrice() + " ");
+//			System.out.println(menuItem.getDescription());
+//		}
+		Iterator dinnerIterator = dinnerMenu.createIterator();
+		while (dinnerIterator.hasNext()) {
+			MenuItem menuItem = (MenuItem) dinnerIterator.next();
 			System.out.print(menuItem.getName() + " ");
 			System.out.println(menuItem.getPrice() + " ");
 			System.out.println(menuItem.getDescription());
