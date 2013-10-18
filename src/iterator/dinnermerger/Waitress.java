@@ -30,12 +30,8 @@ public class Waitress {
 //			System.out.println(menuItem.getDescription());
 //		}
 		Iterator breakfastIterator = pancakeHouseMenu.createIterator();
-		while (breakfastIterator.hasNext()) {
-			MenuItem menuItem = (MenuItem)breakfastIterator.next();
-			System.out.print(menuItem.getName() + " ");
-			System.out.println(menuItem.getPrice() + " ");
-			System.out.println(menuItem.getDescription());
-		}
+		System.out.println("打印出breakfast菜单。。。。");
+		printMenu(breakfastIterator);
 //		MenuItem[] lunchItems = dinnerMenu.getMenuItems();
 //		for (int i = 0; i < lunchItems.length; i++) {
 //			MenuItem menuItem = lunchItems[i];
@@ -44,12 +40,8 @@ public class Waitress {
 //			System.out.println(menuItem.getDescription());
 //		}
 		Iterator dinnerIterator = dinnerMenu.createIterator();
-		while (dinnerIterator.hasNext()) {
-			MenuItem menuItem = (MenuItem)dinnerIterator.next();
-			System.out.print(menuItem.getName() + " ");
-			System.out.println(menuItem.getPrice() + " ");
-			System.out.println(menuItem.getDescription());
-		}
+		System.out.println("打印出lunch菜单。。。。");
+		printMenu(dinnerIterator);
 	}
 	/**
 	 * prints just breakfast items
@@ -64,12 +56,8 @@ public class Waitress {
 //			System.out.println(menuItem.getDescription());
 //		}
 		Iterator breakfastIterator = pancakeHouseMenu.createIterator();
-		while (breakfastIterator.hasNext()) {
-			MenuItem menuItem = (MenuItem)breakfastIterator.next();
-			System.out.print(menuItem.getName() + " ");
-			System.out.println(menuItem.getPrice() + " ");
-			System.out.println(menuItem.getDescription());
-		}
+		System.out.println("打印出breakfast菜单。。。。");
+		printMenu(breakfastIterator);
 	}
 	/**
 	 * prints just lunch items
@@ -83,12 +71,8 @@ public class Waitress {
 //			System.out.println(menuItem.getDescription());
 //		}
 		Iterator dinnerIterator = dinnerMenu.createIterator();
-		while (dinnerIterator.hasNext()) {
-			MenuItem menuItem = (MenuItem) dinnerIterator.next();
-			System.out.print(menuItem.getName() + " ");
-			System.out.println(menuItem.getPrice() + " ");
-			System.out.println(menuItem.getDescription());
-		}
+		System.out.println("打印出lunch菜单。。。。");
+		printMenu(dinnerIterator);
 	}
 	
 	/**
@@ -123,6 +107,19 @@ public class Waitress {
 				System.out.println(menuItem.getPrice() + " ");
 				System.out.println(menuItem.getDescription());
 			}
+		}
+	}
+	
+	/**
+	 * printMenu
+	 * */
+	
+	private void printMenu(Iterator iterator){
+		while (iterator.hasNext()) {
+			MenuItem menuItem = (MenuItem) iterator.next();
+			System.out.print(menuItem.getName() + " ");
+			System.out.println(menuItem.getPrice() + " ");
+			System.out.println(menuItem.getDescription());
 		}
 	}
 	
