@@ -49,7 +49,7 @@ public class Waitress {
 	 * prints just breakfast items
 	 * */
 	public void printBreakfastMenu(){
-		PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
+		//PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
 		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
 		for (int i = 0; i < breakfastItems.size(); i++) {
 			MenuItem menuItem = (MenuItem)breakfastItems.get(i);
@@ -82,10 +82,19 @@ public class Waitress {
 	 * prints all vegetarian menu items
 	 * */
 	public void printVegetarianMenu(){
-		PancakeHouseMenu pancakeHouseMenu =  new PancakeHouseMenu();
+		//PancakeHouseMenu pancakeHouseMenu =  new PancakeHouseMenu();
 		ArrayList breakfastItems = pancakeHouseMenu.getMenuItems();
 		for (int i = 0; i < breakfastItems.size(); i++) {
 			MenuItem menuItem = (MenuItem)breakfastItems.get(i);
+			if (isItemVegetarian(menuItem)) {
+				System.out.print(menuItem.getName() + " ");
+				System.out.println(menuItem.getPrice() + " ");
+				System.out.println(menuItem.getDescription());
+			}
+		}
+		Iterator dinnerIterator = dinnerMenu.createIterator();
+		while (dinnerIterator.hasNext()) {
+			MenuItem menuItem = (MenuItem) dinnerIterator.next();
 			if (isItemVegetarian(menuItem)) {
 				System.out.print(menuItem.getName() + " ");
 				System.out.println(menuItem.getPrice() + " ");
