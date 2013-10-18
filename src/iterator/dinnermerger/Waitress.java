@@ -89,22 +89,19 @@ public class Waitress {
 //				System.out.println(menuItem.getDescription());
 //			}
 //		}
-		Iterator breakfastIterator = pancakeHouseMenu.createIterator();
-		while (breakfastIterator.hasNext()) {
-			MenuItem menuItem = (MenuItem)breakfastIterator.next();
+		printVegetrian(pancakeHouseMenu.createIterator());
+		printVegetrian(dinnerMenu.createIterator());
+	}
+	
+	/**
+	 * printVegetrianMenu
+	 * */
+	private void printVegetrian(Iterator iterator){
+		while (iterator.hasNext()) {
+			MenuItem menuItem = (MenuItem)iterator.next();
 			if (isItemVegetarian(menuItem)) {
 				System.out.print(menuItem.getName() + " ");
-				System.out.println(menuItem.getPrice() + " ");
-				System.out.println(menuItem.getDescription());
-			}
-		}
-		
-		Iterator dinnerIterator = dinnerMenu.createIterator();
-		while (dinnerIterator.hasNext()) {
-			MenuItem menuItem = (MenuItem) dinnerIterator.next();
-			if (isItemVegetarian(menuItem)) {
-				System.out.print(menuItem.getName() + " ");
-				System.out.println(menuItem.getPrice() + " ");
+				System.out.println(menuItem.getPrice());
 				System.out.println(menuItem.getDescription());
 			}
 		}
