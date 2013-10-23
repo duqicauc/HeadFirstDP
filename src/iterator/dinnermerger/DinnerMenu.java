@@ -1,9 +1,11 @@
 package iterator.dinnermerger;
 
+import java.util.Iterator;
+
 /**
  * Dinner House的菜单类DinnerMenu
  * */
-public class DinnerMenu {
+public class DinnerMenu implements Menu{
 	private static final int MAX_ITEMS = 6;	//菜单项最大个数
 	private int numberOfItems = 0;			//当前存放的个数
 	private MenuItem[] menuItems;			//菜单项数组

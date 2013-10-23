@@ -6,7 +6,7 @@ import java.util.Iterator;;
 /**
  * Pancake House的菜单类：PancakeHousMenu
  * */
-public class PancakeHouseMenu {
+public class PancakeHouseMenu implements Menu{
 	private ArrayList menuItems;
 	
 	public PancakeHouseMenu() {

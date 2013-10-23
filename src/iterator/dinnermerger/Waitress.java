@@ -1,19 +1,20 @@
 package iterator.dinnermerger;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Java-Enable Waitress
  * 负责打印各式菜单的类
  * */
 public class Waitress {
-	private DinnerMenu dinnerMenu;
-	private PancakeHouseMenu pancakeHouseMenu;
+	private Menu dinnerMenu;
+	private Menu pancakeHouseMenu;
 	/**
 	 * @param dinnerMenu
 	 * @param pancakeHouseMenu
 	 */
-	public Waitress(DinnerMenu dinnerMenu, PancakeHouseMenu pancakeHouseMenu) {
+	public Waitress(Menu dinnerMenu, Menu pancakeHouseMenu) {
 		super();
 		this.dinnerMenu = dinnerMenu;
 		this.pancakeHouseMenu = pancakeHouseMenu;
@@ -25,7 +26,7 @@ public class Waitress {
 		Iterator breakfastIterator = pancakeHouseMenu.createIterator();
 		System.out.println("打印出breakfast菜单。。。。");
 		printMenu(breakfastIterator);
-		Iterator dinnerIterator = dinnerMenu.createIterator();
+		Iterator dinnerIterator = (Iterator) dinnerMenu.createIterator();
 		System.out.println("打印出lunch菜单。。。。");
 		printMenu(dinnerIterator);
 	}
@@ -41,7 +42,7 @@ public class Waitress {
 	 * prints just lunch items
 	 * */
 	public void printLunchMenu(){
-		Iterator dinnerIterator = dinnerMenu.createIterator();
+		Iterator dinnerIterator = (Iterator) dinnerMenu.createIterator();
 		System.out.println("打印出lunch菜单。。。。");
 		printMenu(dinnerIterator);
 	}
