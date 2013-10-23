@@ -1,6 +1,7 @@
 package iterator.dinnermerger;
 
 import java.util.ArrayList;
+import java.util.Iterator;;
 
 /**
  * Pancake House的菜单类：PancakeHousMenu
@@ -31,7 +32,8 @@ public class PancakeHouseMenu {
 //	}
 	
 	public Iterator createIterator(){
-		return new PancakeHouseMenuIterator(menuItems);
+		// 不再使用我们自己实现的迭代器，而用ArrayList对象自带的迭代器
+		return (Iterator) menuItems.iterator();
 	}
 	
 	//other menu methods here.
