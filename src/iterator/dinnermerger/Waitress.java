@@ -10,25 +10,30 @@ import java.util.Iterator;
 public class Waitress {
 	private Menu dinnerMenu;
 	private Menu pancakeHouseMenu;
+	private Menu cafeMenu;
 	/**
 	 * @param dinnerMenu
 	 * @param pancakeHouseMenu
 	 */
-	public Waitress(Menu dinnerMenu, Menu pancakeHouseMenu) {
+	public Waitress(Menu dinnerMenu, Menu pancakeHouseMenu, Menu cafeMenu) {
 		super();
 		this.dinnerMenu = dinnerMenu;
 		this.pancakeHouseMenu = pancakeHouseMenu;
+		this.cafeMenu = cafeMenu;
 	}
 	/**
 	 * prints every item on menu
 	 * */
 	public void printMenu(){
 		Iterator breakfastIterator = pancakeHouseMenu.createIterator();
-		System.out.println("打印出breakfast菜单。。。。");
+		System.out.println("MENU\n----\n打印出breakfast菜单。。。。");
 		printMenu(breakfastIterator);
 		Iterator dinnerIterator = (Iterator) dinnerMenu.createIterator();
-		System.out.println("打印出lunch菜单。。。。");
+		System.out.println("\n打印出lunch菜单。。。。");
 		printMenu(dinnerIterator);
+		Iterator cafeIterator = cafeMenu.createIterator();
+		System.out.println("\n打印出cafe菜单。。。。");
+		printMenu(cafeIterator);
 	}
 	/**
 	 * prints just breakfast items
