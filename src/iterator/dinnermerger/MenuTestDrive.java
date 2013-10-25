@@ -8,8 +8,9 @@ public class MenuTestDrive {
  
 		Waitress waitress = new Waitress(dinerMenu, pancakeHouseMenu, cafeMenu);
  
-		waitress.printMenu();
+		//waitress.printMenu();
 		//waitress.printBreakfastMenu();
 		//waitress.printVegetarianMenu();
+		waitress.printLunchMenu();
 	}
 }
