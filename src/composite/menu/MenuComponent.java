@@ -1,5 +1,7 @@
 package composite.menu;
 
+import java.util.Iterator;
+
 /**
  * 为leaf节点和composite节点提供统一的操作接口
  * 为每一个方法提供了默认实现
@@ -38,4 +40,6 @@ public abstract class MenuComponent {
 		// print()是一个“operation”方法，Menus和MenuItems都要实现它，但是我们也提供了一个默认实现
 		throw new UnsupportedOperationException();
 	}
+	
+	public abstract Iterator createIterator();
 }

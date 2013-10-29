@@ -10,6 +10,7 @@ public class Menu extends MenuComponent {
 	private ArrayList menuComponents = new ArrayList(); //管理类型为MenuComponent的孩子节点
 	private String name;
 	private String description;
+	private Iterator iterator = null;
 	
 	public Menu(String name, String description) {
 		this.name = name;
@@ -47,5 +48,13 @@ public class Menu extends MenuComponent {
 			// 递归：如果在本次迭代时，遇到另一个Menu对象，那么它的print函数将会开始执行另一次print
 			menuComponent.print();
 		}
+	}
+
+	@Override
+	public Iterator createIterator() {
+		if (iterator == null) {
+			iterator = new CompositeIterator(menuComponents.iterator());
+		}
+		return iterator;
 	}
 }
