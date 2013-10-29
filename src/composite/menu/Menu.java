@@ -1,6 +1,7 @@
 package composite.menu;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * composite类，可以包含MenuItems或者其他的Menus
@@ -39,5 +40,12 @@ public class Menu extends MenuComponent {
 		System.out.print("\n" + getName());
 		System.out.println(", " + getDescription());
 		System.out.println("---------------------");
+		
+		Iterator iterator = menuComponents.iterator();
+		while (iterator.hasNext()) {
+			MenuComponent menuComponent = (MenuComponent) iterator.next();
+			// 递归：如果在本次迭代时，遇到另一个Menu对象，那么它的print函数将会开始执行另一次print
+			menuComponent.print();
+		}
 	}
 }
