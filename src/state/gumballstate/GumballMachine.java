@@ -6,6 +6,7 @@ public class GumballMachine {
 	private State noQuarterState;
 	private State hasQuarterState;
 	private State soldState;
+	private State winState;
 	
 	private State state = soldOutState; // 负责跟踪状态机的变化
 	private int count = 0; // 记录糖果机器中的糖果数量
@@ -134,6 +135,13 @@ public class GumballMachine {
 	 */
 	public int getCount() {
 		return count;
+	}
+
+	/**
+	 * @return the winState
+	 */
+	public State getWinState() {
+		return winState;
 	}
 	
 	
