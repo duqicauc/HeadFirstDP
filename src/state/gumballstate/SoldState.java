@@ -37,5 +37,9 @@ public class SoldState implements State{
 			gumballMachine.setState(gumballMachine.getSoldOutState());
 		}
 	}
+	
+	public String toString(){
+		return "dispensing a gumball";
+	}
 
 }

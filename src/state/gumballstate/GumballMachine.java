@@ -83,17 +83,7 @@ public class GumballMachine {
 		if (count != 1) {
 			result.append("s");
 		}
-		result.append("\nMachine is ");
-		if (state == soldOutState) {
-			result.append("sold out");
-		} else if (state == noQuarterState) {
-			result.append("waiting for quarter");
-		} else if (state == hasQuarterState) {
-			result.append("waiting for turn of crank");
-		} else if (state == soldState) {
-			result.append("delivering a gumball");
-		}
-		result.append("\n");
+		result.append("\nMachine is " + state + "\n");
 		return result.toString();
 	}
 	
