@@ -16,6 +16,7 @@ public class GumballMachine {
 		this.noQuarterState = new NoQuarterState(this);
 		this.hasQuarterState = new HasQuarterState(this);
 		this.soldState = new SoldState(this);
+		this.winState = new WinnerState(this);
 		this.count = numberGumballs;
 		if (count > 0) {
 			state = noQuarterState;
@@ -43,7 +44,7 @@ public class GumballMachine {
 		// 依照当前状态执行相应的turnCrank动作
 		state.turnCrank();
 		// turnCrank执行后状态若为soldState，即状态转换正常则执行dispense
-		if (state == soldState) {
+		if ((state == soldState) || (state == winState)) {
 			state.dispense();
 		}
 	}
