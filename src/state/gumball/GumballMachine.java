@@ -37,7 +37,7 @@ public class GumballMachine {
 	/**
 	 * 退回25分
 	 * */
-	public void enjectQuarter(){
+	public void ejectQuarter(){
 		if (state == HAS_QUARTER) {
 			System.out.println("Quarter returned");
 			state = NO_QUARTER;
@@ -87,5 +87,38 @@ public class GumballMachine {
 		} else if (state == HAS_QUARTER) {
 			System.out.println("No gumball dispensed");
 		}
+	}
+	
+	/**
+	 * 重新装填糖果
+	 * */
+	public void refill(int numGumBalls) {
+		this.count = numGumBalls;
+		state = NO_QUARTER;
+	}
+	
+	/**
+	 * 把对象转换成String类型
+	 * */
+	public String toString() {
+		StringBuffer result = new StringBuffer();
+		result.append("\nMighty Gumball, Inc.");
+		result.append("\nJava-enabled Standing Gumball Model #2004\n");
+		result.append("Inventory: " + count + " gumball");
+		if (count != 1) {
+			result.append("s");
+		}
+		result.append("\nMachine is ");
+		if (state == SOLD_OUT) {
+			result.append("sold out");
+		} else if (state == NO_QUARTER) {
+			result.append("waiting for quarter");
+		} else if (state == HAS_QUARTER) {
+			result.append("waiting for turn of crank");
+		} else if (state == SOLD) {
+			result.append("delivering a gumball");
+		}
+		result.append("\n");
+		return result.toString();
 	}
 }
