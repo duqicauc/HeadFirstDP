@@ -1,22 +1,26 @@
 package state.gumballstate;
 
+import java.net.MalformedURLException;
+import java.rmi.*;
+
 public class GumballMachineMonitorTest {
 
 	/**
 	 * @param args
+	 * @throws RemoteException 
 	 */
-	public static void main(String[] args) {
-		int count = 0;
-		if (args.length < 2) {
-			System.out.println("GumballMachine <name> <inventory>");
-			System.exit(1);
+	public static void main(String[] args) throws RemoteException {
+		String locationString = "rmi://127.0.0.1/gumballmachine";
+		GumballMachineMonitor monitor;
+		try {
+			GumballMachineRemote machineRemote = (GumballMachineRemote) Naming.lookup(locationString);
+			monitor = new GumballMachineMonitor(machineRemote);
+			monitor.report();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
 		}
-		count = Integer.parseInt(args[1]);
-		GumballMachine gumballMachine = new GumballMachine(args[0], count);
-		
-		GumballMachineMonitor monitor = new GumballMachineMonitor(gumballMachine);
-		
-		monitor.report();
 	}
 
 }
