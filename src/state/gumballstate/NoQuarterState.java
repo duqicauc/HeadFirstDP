@@ -1,7 +1,7 @@
 package state.gumballstate;
 
 public class NoQuarterState implements State{
-	private GumballMachine gumballMachine;
+	private transient GumballMachine gumballMachine;
 	
 	/**
 	 * @param gumballMachine
