@@ -8,15 +8,17 @@ public class GumballMachine {
 	private State soldState;
 	private State winState;
 	
+	private String location;	// 表示糖果机的位置
 	private State state = soldOutState; // 负责跟踪状态机的变化
 	private int count = 0; // 记录糖果机器中的糖果数量
 	
-	public GumballMachine(int numberGumballs) {
+	public GumballMachine(String location,int numberGumballs) {
 		this.soldOutState = new SoldOutState(this);
 		this.noQuarterState = new NoQuarterState(this);
 		this.hasQuarterState = new HasQuarterState(this);
 		this.soldState = new SoldState(this);
 		this.winState = new WinnerState(this);
+		this.location = location;
 		this.count = numberGumballs;
 		if (count > 0) {
 			state = noQuarterState; //糖果机的初始状态，没有获取25分，
@@ -81,7 +83,8 @@ public class GumballMachine {
 		StringBuffer result = new StringBuffer();
 		result.append("\nMighty Gumball, Inc.");
 		result.append("\nJava-enabled Standing Gumball Model #2004\n");
-		result.append("Inventory: " + count + " gumball");
+		result.append("\nLocation: "+location);
+		result.append("\nInventory: " + count + " gumball");
 		if (count != 1) {
 			result.append("s");
 		}
@@ -144,6 +147,14 @@ public class GumballMachine {
 	public State getWinState() {
 		return winState;
 	}
+
+	/**
+	 * @return the location
+	 */
+	public String getLocation() {
+		return location;
+	}
+	
 	
 	
 }
