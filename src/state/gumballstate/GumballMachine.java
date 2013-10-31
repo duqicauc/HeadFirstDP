@@ -1,7 +1,10 @@
 package state.gumballstate;
 
+import java.rmi.*;
+import java.rmi.server.*;
 
-public class GumballMachine {
+
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote{
 	private State soldOutState;
 	private State noQuarterState;
 	private State hasQuarterState;
@@ -12,7 +15,7 @@ public class GumballMachine {
 	private State state = soldOutState; // 负责跟踪状态机的变化
 	private int count = 0; // 记录糖果机器中的糖果数量
 	
-	public GumballMachine(String location,int numberGumballs) {
+	public GumballMachine(String location,int numberGumballs) throws RemoteException{
 		this.soldOutState = new SoldOutState(this);
 		this.noQuarterState = new NoQuarterState(this);
 		this.hasQuarterState = new HasQuarterState(this);
