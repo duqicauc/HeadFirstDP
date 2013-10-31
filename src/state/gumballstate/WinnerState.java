@@ -24,6 +24,7 @@ public class WinnerState implements State{
 
 	@Override
 	public void dispense() {
+		/* 状态转移： 由WinnerState到SoldOutState或者NoQuarterState*/
 		System.out.println("YOU'RE A WINNER! You get two gumballs for your quarter");
 		gumballMachine.releaseBall();
 		if (gumballMachine.getCount() == 0) {

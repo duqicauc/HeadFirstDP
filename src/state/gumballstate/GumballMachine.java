@@ -19,7 +19,7 @@ public class GumballMachine {
 		this.winState = new WinnerState(this);
 		this.count = numberGumballs;
 		if (count > 0) {
-			state = noQuarterState;
+			state = noQuarterState; //糖果机的初始状态，没有获取25分，
 		}
 	}
 	

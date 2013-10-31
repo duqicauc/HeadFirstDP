@@ -19,15 +19,17 @@ public class HasQuarterState implements State{
 
 	@Override
 	public void ejectQuarter() {
+		/* 状态转移：由HasQuarter到NoQuarter*/
 		System.out.println("Quarter returned");
 		gumballMachine.setState(gumballMachine.getNoQuarterState());
 	}
 
 	@Override
 	public void turnCrank() {
+		/* 状态转移：由HasQuarter到WinState(10%)或者SoldState(90%)*/
 		System.out.println("You turned...");
 		int winner = winnerRandom.nextInt(10);
-	//  int winner = TrueRandom.randomNToM(0, 9);
+		//int winner = TrueRandom.randomNToM(0, 9);
 		//int winner = 0;
 		if ((winner == 0) && (gumballMachine.getCount()>1)) {
 			gumballMachine.setState(gumballMachine.getWinState());

@@ -27,7 +27,7 @@ public class SoldState implements State{
 
 	@Override
 	public void dispense() {
-		// 发放出糖果
+		/* 状态转移：由SoldState到NoQuarter或者SoldOutState */
 		gumballMachine.releaseBall();
 		// 如果机器中还有糖果，则设置状态为“NoQuarter”
 		if (gumballMachine.getCount() > 0) {

@@ -12,6 +12,7 @@ public class NoQuarterState implements State{
 
 	@Override
 	public void insertQuarter() {
+		//状态转移的动作，下一个正确状态是HasQuarterState
 		gumballMachine.setState(gumballMachine.getHasQuarterState());
 		System.out.println("You inserted a quarter");		
 	}
