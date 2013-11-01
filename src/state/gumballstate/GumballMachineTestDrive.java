@@ -1,23 +1,28 @@
 package state.gumballstate;
 
 import java.rmi.*;
+import java.rmi.registry.*;
 
 
 public class GumballMachineTestDrive {
 
 	public static void main(String[] args) {
 		GumballMachineRemote gumballMachine = null;
-		int count;
+		int count = 0;
+		String urlString = null;
 		if (args.length < 2) {
 			System.out.println("GumballMachine <name> <inventory>");
 			System.exit(1);
 		}
 		
 		try {
-			count = Integer.parseInt(args[1]);
-			// remote service 实例化一个GumballMachine，并需要用RMI注册
-			gumballMachine = new GumballMachine(args[0],count);
-			Naming.rebind("//" + args[0] + "/gumballmachine",gumballMachine);
+			System.out.println("Server start ...");
+			count = Integer.parseInt(args[1]);	//第二个参数作为个数
+			gumballMachine = new GumballMachine(args[0], count);//第一个参数作为本机IP地址或者主机名
+			Registry r = LocateRegistry.createRegistry(8111);
+			urlString = args[0].toString() + "/gumballmachine";
+			System.out.println(urlString);
+			r.rebind(urlString, gumballMachine);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
