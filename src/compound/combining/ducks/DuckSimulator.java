@@ -22,13 +22,39 @@ public class DuckSimulator {
 		
 		Quackable gooseDuck = gooseFactory.createGooseDuck();
 		
-		// 测试各个鸭子对象
-		System.out.println("\nDuck Simulator: With Abstract Factory");
-		simulate(mallardDuck);
-		simulate(redheadDuck);
-		simulate(duckCall);
-		simulate(rubberDuck);
-		simulate(gooseDuck);//用GooseAdapter将Goose封装，然后模拟器就像对待其他duck接口一样对待Goose。
+		/* 实例化一个Flock对象，然后将鸭子对象填充进去 */
+		Flock flockOfDucks = new Flock();
+		flockOfDucks.add(redheadDuck);
+		flockOfDucks.add(duckCall);
+		flockOfDucks.add(rubberDuck);
+		flockOfDucks.add(gooseDuck);
+		
+		Flock flockOfMallards = new Flock();
+		Quackable mallardOne =  duckFactory.createMallardDuck();
+		Quackable mallardTwo = duckFactory.createMallardDuck();
+		Quackable mallardThree = duckFactory.createMallardDuck();
+		Quackable mallardFour = duckFactory.createMallardDuck();
+		flockOfMallards.add(mallardOne);
+		flockOfMallards.add(mallardTwo);
+		flockOfMallards.add(mallardThree);
+		flockOfMallards.add(mallardFour);
+		flockOfDucks.add(flockOfMallards);
+		
+		System.out.println("\nDuck Simulator: With Observer");
+		Quackologist quackologist = new Quackologist();
+		flockOfDucks.registerObserver(quackologist);
+		simulate(flockOfDucks);
+		
+//		System.out.println("\nDuck Simulator: Mallard Flock Simulator");
+//		simulate(flockOfMallards);
+		
+//		// 测试各个鸭子对象
+//		System.out.println("\nDuck Simulator: With Abstract Factory");
+//		simulate(mallardDuck);
+//		simulate(redheadDuck);
+//		simulate(duckCall);
+//		simulate(rubberDuck);
+//		simulate(gooseDuck);//用GooseAdapter将Goose封装，然后模拟器就像对待其他duck接口一样对待Goose。
 		
 		System.out.println("The ducks quacked " + QuackCounter.getNumberOfQuack() + " times");
  	}
