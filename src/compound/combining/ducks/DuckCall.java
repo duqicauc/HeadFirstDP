@@ -30,7 +30,7 @@ public class DuckCall implements Quackable {
 	}
 	
 	public String toString(){
-		return "Dduck Call";
+		return "Dduck-Call";
 	}
 
 }

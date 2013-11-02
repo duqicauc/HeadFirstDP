@@ -31,5 +31,11 @@ public class QuackCounter implements Quackable {
 	public void notifyObservers() {
 		duck.notifyObservers();
 	}
+	
+	/* 在Decorator类中，toString可以不重写，应该是父类有个默认的实现 ,
+	 * 最后总会调用到被它装饰的那个duck.toString()*/
+//	public String toString(){
+//		return duck.toString();
+//	}
 
 }
