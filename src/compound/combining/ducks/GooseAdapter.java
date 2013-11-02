@@ -6,32 +6,36 @@ package compound.combining.ducks;
  * */
 public class GooseAdapter implements Quackable {
 	private Goose goose;
+	private Observable observable;
 
 	/**
 	 * @param goose
 	 */
 	public GooseAdapter(Goose goose) {
 		this.goose = goose;
+		observable = new Observable(this);
 	}
 
 
 	@Override
 	public void quack() {
 		goose.honk();
+		notifyObservers();
 	}
 
 
 	@Override
 	public void registerObserver(Observer observer) {
-		// TODO Auto-generated method stub
-		
+		observable.registerObserver(observer);
 	}
 
 
 	@Override
 	public void notifyObservers() {
-		// TODO Auto-generated method stub
-		
+		observable.notifyObservers();
 	}
-
+	
+	public String toString(){
+		return "Goose pretending a Duck";
+	}
 }

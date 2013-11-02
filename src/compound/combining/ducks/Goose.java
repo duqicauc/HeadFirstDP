@@ -9,6 +9,6 @@ public class Goose {
 	}
 	
 	public String toString(){
-		return "goose";
+		return "Goose";
 	}
 }
