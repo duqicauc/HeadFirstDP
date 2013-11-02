@@ -4,7 +4,7 @@ import java.lang.reflect.Proxy;
 import java.util.Hashtable;
 
 public class MatchMakingTestDrive {
-	Hashtable datingDB = new Hashtable();
+	Hashtable<String, PersonBean> datingDB = new Hashtable<String, PersonBean>();
 
 	/**
 	 * @param args
@@ -23,6 +23,7 @@ public class MatchMakingTestDrive {
 	 * */
 	public void drive() {
 		PersonBean joe = getPersonFromDatabase("Joe Javabean");
+		/* Owner proxy允许getting和setting，但不能给自己打分 */
 		PersonBean ownerProxy = getOwnerProxy(joe);
 		System.out.println("Name is " + ownerProxy.getName());
 		ownerProxy.setInterests("bowling, Go");
@@ -33,7 +34,9 @@ public class MatchMakingTestDrive {
 			System.out.println("Can't set rating from owner proxy");
 		}
 		System.out.println("Rating is " + ownerProxy.getHotOrNotRating());
-
+		
+//		PersonBean kelly = getPersonFromDatabase("Kelly Klosure");
+		/* NonOwner proxy允许getting和打分，但不允许setting */
 		PersonBean nonOwnerProxy = getNonOwnerProxy(joe);
 		System.out.println("Name is " + nonOwnerProxy.getName());
 		try {
@@ -74,11 +77,19 @@ public class MatchMakingTestDrive {
 				person.getClass().getInterfaces(),
 				new NonOwnerInvocationHandler(person));
 	}
-
+	
+	/**
+	 * 从HashTable中取出数据
+	 * 在Web应用程序中可以作为执行SQL语句的函数来处理
+	 * */
 	PersonBean getPersonFromDatabase(String name) {
 		return (PersonBean) datingDB.get(name);
 	}
 
+	/**
+	 * 初始化数据库，在这里用HashTable模拟
+	 * 在Web应用程序中这里可以初始化数据库连接
+	 * */
 	void initializeDatabase() {
 		PersonBean joe = new PersonBeanImpl();
 		joe.setName("Joe Javabean");

@@ -21,9 +21,9 @@ public class NonOwnerInvocationHandler implements InvocationHandler {
 		// 外人只能看，不能改，能评分
 		try {
 			if (method.getName().startsWith("get")) {
-				method.invoke(person, args);
+				return method.invoke(person, args);
 			}else if (method.getName().equals("setHotOrNotRating")) {
-				method.invoke(person, args);
+				return method.invoke(person, args);
 			}else if (method.getName().startsWith("set")) {
 				throw new IllegalAccessException();
 			}
