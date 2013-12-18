@@ -9,7 +9,7 @@ public class Singleton2 {
 	}
 	
 //  （1）给getInstance方法加同步锁	
-//	public synchronized Singleton2 getInstance(){
+//	public static synchronized Singleton2 getInstance(){
 //		if (instance == null) {
 //			instance = new Singleton2();
 //		}
@@ -17,7 +17,7 @@ public class Singleton2 {
 //	}
 	
 //  (2)使用同步代码块,将关键代码区域包含起来
-	public Singleton2 getInstance(){
+	public static Singleton2 getInstance(){
 		synchronized (Singleton2.class) {
 			if (instance == null) {
 				instance = new Singleton2();
