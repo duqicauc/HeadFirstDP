@@ -1,7 +1,8 @@
 package singleton;
 
+/* 不好的写法一：只适应于单线程环境 */
 public class Singletion {
-	private static Singletion uniqueSingletion;	//使用一个静态变量存放单例对象的引用值
+	private static Singletion uniqueSingletion = null;	//使用一个静态变量存放单例对象的引用值
 	
 	// 构造函数定义为private，只能从类的内部调用
 	private Singletion(){
