@@ -1,0 +1,74 @@
+/**
+ * Created by duqi on 2015/3/15.
+ */
+/**
+ * 当有很多参数，且很多参数是可选的时候，如果使用构造函数重载，类的构造容易出错且每次都会给定不必要的赋值
+ * 解决办法：Builder Pattern
+ * */
+//Builder pattern
+public class NutritionFacts {
+    private final int servingSize;  // 必须
+    private final int servings;     // 必须
+    private final int calories;     // 可选
+    private final int fat;          // 可选
+    private final int sodium;       // 可选
+    private final int carbohydrate; // 可选
+
+    public static class Builder{
+        private final int servingSize;  // 必须
+        private final int servings;     // 必须
+        private int calories = 0;     // 可选 (1)可选的参数要给默认值
+        private int fat = 0;          // 可选
+        private int sodium = 0;       // 可选
+        private int carbohydrate = 0; // 可选
+
+        //（2）使用时，先通过这个构造函数建立builder
+        public  Builder(int servingSize, int servings) {
+            this.servingSize = servingSize;
+            this.servings = servings;
+        }
+
+        // (3)再通过下面这个装配函数给指定的可选参数赋值
+        public Builder calories(int calories){
+            this.calories = calories;
+            return this;
+        }
+
+        public Builder fat(int fat){
+            this.fat = fat;
+            return this;
+        }
+
+        public  Builder sodium(int sodium){
+            this.sodium = sodium;
+            return this;
+        }
+
+        public Builder carbohydr(int carbohydrate){
+            this.carbohydrate =carbohydrate;
+            return this;
+        }
+
+        //(4)最后根据build接口建立目标实例，通过this指针将builder对象中的值传递到目标实例中
+        public NutritionFacts build(){
+            return new NutritionFacts(this);
+        }
+    }
+
+    // (5) 目标实例的构造器设置为私有，只对Builder中的build函数使用
+    private NutritionFacts(Builder builder){
+        servings = builder.servings;
+        servingSize = builder.servingSize;
+        calories = builder.calories;
+        fat = builder.fat;
+        sodium = builder.sodium;
+        carbohydrate = builder.carbohydrate;
+    }
+
+    /**
+     * 客户端测试代码
+     * */
+    public static void main(String[] args){
+        NutritionFacts n1 = new NutritionFacts.Builder(249,8).calories(10).carbohydr(100).fat(5).build();
+    }
+}
